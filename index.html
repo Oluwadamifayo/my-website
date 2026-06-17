@@ -3,81 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baloking Gas | Professional Gas Solutions</title>
+    <title>Baloking Engineering Project Limited</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <nav class="navbar">
-        <div class="logo">Baloking Gas</div>
+        <div class="logo">BALOKING <span class="sub-logo">ENGINEERING</span></div>
         <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#services">Our Services</a>
+            <a href="#services">Services</a>
+            <a href="#quote">Get a Quote</a>
+            <a href="#faq">FAQ</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
 
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Premium Gas Solutions You Can Trust</h1>
-            <p>Reliable, safe, and lightning-fast cooking gas delivery and maintenance services across Ikorodu.</p>
-            <a href="tel:+2348080957541" class="hero-btn">Order Gas Refill Now</a>
-        </div>
-    </header>
-
     <main class="container">
         
-        <section id="about" class="section-card">
-            <span class="badge">Who We Are</span>
-            <h2>About Our Business</h2>
-            <p>Welcome to <strong>Baloking Gas</strong>. We are a trusted brand dedicated to supplying top-quality liquified petroleum gas (LPG) solutions. We prioritize safety, efficiency, and exceptional customer service to keep your kitchen and commercial operations running smoothly.</p>
+        <header class="header-main">
+            <p class="subtitle">FROM CONCEPT TO COMMISSIONING</p>
+            <h1>YOUR COMPLETE <br><span class="highlight">OIL & GAS PROJECT PARTNER</span></h1>
+            <p class="tagline-text">End-to-End Construction Solutions | Safety | Quality | Performance</p>
+        </header>
+
+        <section class="image-section">
+            <img src="flyer.jpg" alt="Baloking Engineering Project Flyer" class="project-flyer">
         </section>
 
-        <section id="services" class="section-card">
-            <span class="badge">What We Do</span>
-            <h2>Our Specialized Services</h2>
+        <section id="services" class="services-section">
+            <h2>OUR OIL & GAS CONSTRUCTION</h2>
             
-            <div class="services-grid">
-                <div class="service-box">
-                    <div class="icon">🔥</div>
-                    <h3>Gas Refills & Delivery</h3>
-                    <p>Fast, weighed accuracy for all cylinder capacities delivered right to your doorstep.</p>
+            <div class="step-card">
+                <span class="step-num">1</span>
+                <h3>Feasibility Study & Business Planning</h3>
+            </div>
+            <div class="step-card">
+                <span class="step-num">2</span>
+                <h3>Location Selection & Site Inspection</h3>
+            </div>
+            <div class="step-card">
+                <span class="step-num">3</span>
+                <h3>DPR/LPG License Guidance</h3>
+            </div>
+            <div class="step-card">
+                <span class="step-num">4</span>
+                <h3>Gas Plant Construction Consultation</h3>
+            </div>
+            <div class="step-card">
+                <span class="step-num">5</span>
+                <h3>Equipment Sourcing & Installation Support</h3>
+            </div>
+        </section>
+
+        <section id="quote" class="form-section">
+            <h2>REQUEST A PROJECT QUOTE</h2>
+            <p class="form-intro">Fill out the details below, and our engineering consultants will reach out to you.</p>
+            <form action="https://formspree.io/f/placeholder" method="POST" class="quote-form">
+                <div class="form-group">
+                    <label for="name">Full Name / Company Name</label>
+                    <input type="text" id="name" name="name" required placeholder="e.g., John Doe Enterprises">
                 </div>
-                <div class="service-box">
-                    <div class="icon">🛡️</div>
-                    <h3>Sales & Inspections</h3>
-                    <p>High-grade, brand new steel and fiberglass cylinders with meticulous safety testing.</p>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="e.g., +234...">
                 </div>
-                <div class="service-box">
-                    <div class="icon">🔧</div>
-                    <h3>Burner Maintenance</h3>
-                    <p>Expert leak testing, regulator checkups, and systemic burner repairs by certified pros.</p>
+                <div class="form-group">
+                    <label for="service">Required Service</label>
+                    <select id="service" name="service" required>
+                        <option value="">-- Select a Service --</option>
+                        <option value="feasibility">Feasibility Study & Planning</option>
+                        <option value="site-inspection">Location Selection & Site Inspection</option>
+                        <option value="licensing">DPR / LPG License Guidance</option>
+                        <option value="construction">Gas Plant Construction Consultation</option>
+                        <option value="equipment">Equipment Sourcing & Installation</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Project Brief / Message</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Describe your project location, scale, or requirements..."></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Submit Request</button>
+            </form>
+        </section>
+
+        <section id="faq" class="faq-section">
+            <h2>FREQUENTLY ASKED QUESTIONS</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">What is the typical timeline for an LPG plant construction project?</div>
+                    <div class="faq-answer">Timelines vary based on the plant scale, site approvals, and technical configurations. Contact our consultation team for a precise engineering blueprint schedule.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Do you assist with full DPR/NMDPRA licensing documentation?</div>
+                    <div class="faq-answer">Yes, we provide step-by-step guidance and technical framework advisory to ensure your operation fulfills standard local regulatory requirements completely.</div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="section-card contact-highlight">
-            <span class="badge badge-orange">Get In Touch</span>
-            <h2>Visit or Contact Us</h2>
+        <section id="contact" class="cta-dark-box">
+            <h3>READY TO LAUNCH YOUR GAS PLANT BUSINESS?</h3>
+            <p>Contact us today for professional consultation and setup guidance.</p>
             
-            <div class="contact-details">
-                <p><strong>📍 Operational Plaza Address:</strong><br>
-                Ayinke Saka Plaza, Agbala bust stop, Oriwu club, off Sabo road, Ikorodu, Lagos State, Nigeria.</p>
-                
-                <p><strong>⏰ Working Hours:</strong><br>
-                Monday - Saturday: 8:00 AM - 6:00 PM</p>
-                
-                <p><strong>📞 Hotline:</strong><br>
-                +234 808 095 7541</p>
+            <div class="contact-buttons">
+                <a href="tel:+2347032145984" class="btn-primary">📞 Call Now</a>
+                <a href="https://wa.me/2347032145984?text=Hello%20Baloking%20Engineering%2C%20I%20would%20like%20to%20inquire%20about%20your%20gas%20plant%20construction%20services." target="_blank" class="btn-whatsapp">💬 WhatsApp Chat</a>
             </div>
-
-            <a href="tel:+2348080957541" class="cta-button">📞 Call to Place Your Order</a>
+            
+            <div class="contact-row" style="margin-top: 25px;">
+                <span class="instagram-handle">📸 @Baloking_gas_ng</span>
+            </div>
         </section>
 
     </main>
 
     <footer>
-        <p>&copy; 2026 Baloking Gas. All Rights Reserved.</p>
+        <p>&copy; 2026 Baloking Engineering Project Limited. All Rights Reserved.</p>
     </footer>
 
 </body>
