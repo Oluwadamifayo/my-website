@@ -5,118 +5,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Baloking Engineering Project Limited</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Animation definition */
+        @keyframes slideDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #111111;
+            color: #ffffff;
+        }
+
+        /* Title Bar with your yellow/white mix and animation */
+        .title-bar {
+            background: linear-gradient(90deg, #f39c12, #ffffff);
+            padding: 25px 15px;
+            text-align: center;
+            animation: slideDown 1s ease-out forwards;
+        }
+
+        .title-bar h1 {
+            color: #111111;
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        /* Styling for your contact section from your screenshots */
+        .contact-row {
+            margin-top: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .btn-email {
+            background-color: #f39c12;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        .instagram-handle {
+            color: #ccc;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            border-top: 1px solid #333;
+            padding-top: 20px;
+        }
+    </style>
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="logo">BALOKING <span class="sub-logo">ENGINEERING</span></div>
-        <div class="nav-links">
-            <a href="#services">Services</a>
-            <a href="#quote">Get a Quote</a>
-            <a href="#faq">FAQ</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
+    <div class="title-bar">
+        <h1>Baloking Engineering Project Limited</h1>
+    </div>
 
-    <main class="container">
-        
-        <header class="header-main">
-            <p class="subtitle">FROM CONCEPT TO COMMISSIONING</p>
-            <h1>YOUR COMPLETE <br><span class="highlight">OIL & GAS PROJECT PARTNER</span></h1>
-            <p class="tagline-text">End-to-End Construction Solutions | Safety | Quality | Performance</p>
-        </header>
+    <main>
+        <section>
+            <div>
+                <a href="https://wa.me/your-number-here?text=Baloking%20Engineering%2C%20I%20would%20like%20to%20inquire%20about%20your%20gas%20plant%20construction%20services." target="_blank" class="btn-whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="mailto:Balokingengineeringprojectltd@gmail.com" class="btn-email">
+                    <i class="fa-solid fa-envelope"></i> Email Us
+                </a>
+            </div>
 
-        <section class="image-section">
-            <img src="flyer.jpg" alt="Baloking Engineering Project Flyer" class="project-flyer">
-        </section>
-
-        <section id="services" class="services-section">
-            <h2>OUR OIL & GAS CONSTRUCTION</h2>
-            
-            <div class="step-card">
-                <span class="step-num">1</span>
-                <h3>Feasibility Study & Business Planning</h3>
-            </div>
-            <div class="step-card">
-                <span class="step-num">2</span>
-                <h3>Location Selection & Site Inspection</h3>
-            </div>
-            <div class="step-card">
-                <span class="step-num">3</span>
-                <h3>DPR/LPG License Guidance</h3>
-            </div>
-            <div class="step-card">
-                <span class="step-num">4</span>
-                <h3>Gas Plant Construction Consultation</h3>
-            </div>
-            <div class="step-card">
-                <span class="step-num">5</span>
-                <h3>Equipment Sourcing & Installation Support</h3>
+            <div class="contact-row">
+                <p style="color: #f39c12; font-size: 0.95rem; margin: 0;">
+                    <i class="fa-solid fa-envelope"></i> Balokingengineeringprojectltd@gmail.com
+                </p>
+                <span class="instagram-handle">
+                    <i class="fa-brands fa-instagram"></i> @Baloking_gas_ng
+                </span>
             </div>
         </section>
-
-        <section id="quote" class="form-section">
-            <h2>REQUEST A PROJECT QUOTE</h2>
-            <p class="form-intro">Fill out the details below, and our engineering consultants will reach out to you.</p>
-            <form action="https://formspree.io/f/xnjyyaab" method="POST" class="quote-form">
-                <div class="form-group">
-                    <label for="name">Full Name / Company Name</label>
-                    <input type="text" id="name" name="name" required placeholder="e.g., John Doe Enterprises">
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" required placeholder="e.g., +234...">
-                </div>
-                <div class="form-group">
-                    <label for="service">Required Service</label>
-                    <select id="service" name="service" required>
-                        <option value="">-- Select a Service --</option>
-                        <option value="feasibility">Feasibility Study & Planning</option>
-                        <option value="site-inspection">Location Selection & Site Inspection</option>
-                        <option value="licensing">DPR / LPG License Guidance</option>
-                        <option value="construction">Gas Plant Construction Consultation</option>
-                        <option value="equipment">Equipment Sourcing & Installation</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="message">Project Brief / Message</label>
-                    <textarea id="message" name="message" rows="4" placeholder="Describe your project location, scale, or requirements..."></textarea>
-                </div>
-                <button type="submit" class="btn-submit">Submit Request</button>
-            </form>
-        </section>
-
-        <section id="faq" class="faq-section">
-            <h2>FREQUENTLY ASKED QUESTIONS</h2>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">What is the typical timeline for an LPG plant construction project?</div>
-                    <div class="faq-answer">Timelines vary based on the plant scale, site approvals, and technical configurations. Contact our consultation team for a precise engineering blueprint schedule.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Do you assist with full DPR/NMDPRA licensing documentation?</div>
-                    <div class="faq-answer">Yes, we provide step-by-step guidance and technical framework advisory to ensure your operation fulfills standard local regulatory requirements completely.</div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="cta-dark-box">
-            <h3>READY TO LAUNCH YOUR GAS PLANT BUSINESS?</h3>
-            <p>Contact us today for professional consultation and setup guidance.</p>
-            
-            <div class="contact-buttons">
-                <a href="tel:+2347032145984" class="btn-primary"><i class="fa-solid fa-phone"></i> Call Now</a>
-                <a href="https://wa.me/2347032145984?text=Hello%20Baloking%20Engineering%2C%20I%20would%20like%20to%20inquire%20about%20your%20gas%20plant%20construction%20services." target="_blank" class="btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-                <a href="mailto:Balokingengineeringprojectltd@gmail.com" class="btn-email"><i class="fa-solid fa-envelope"></i> Email Us</a>
-            </div>
-            
-            <div class="contact-row" style="margin-top: 25px; flex-direction: column; gap: 8px;">
-                <p style="color: #f39c12; font-size: 0.95rem;"><i class="fa-solid fa-envelope"></i> Balokingengineeringprojectltd@gmail.com</p>
-                <span class="instagram-handle" style="color: #ccc;"><i class="fa-brands fa-instagram"></i> @Baloking_gas_ng</span>
-            </div>
-        </section>
-
     </main>
 
     <footer>
