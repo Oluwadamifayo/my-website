@@ -21,7 +21,7 @@ body {
 }
 
 h1 {
-    color: #d9381e; /* Energy/Flame Orange-Red tint */
+    color: #d9381e; 
     margin-bottom: 5px;
 }
 
@@ -51,4 +51,26 @@ h2 {
 ul {
     padding-left: 20px;
     line-height: 1.6;
+}
+
+p {
+    line-height: 1.5;
+}
+
+.btn-contact {
+    display: block;
+    background-color: #27ae60; /* Professional green action color */
+    color: white;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: background 0.2s ease;
+}
+
+.btn-contact:active {
+    background-color: #1e8449;
 }
