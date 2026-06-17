@@ -130,7 +130,6 @@ h2 {
     color: #333;
 }
 
-/* Premium Form Elements */
 .form-intro {
     text-align: center;
     font-size: 0.9rem;
@@ -178,7 +177,6 @@ h2 {
     cursor: pointer;
 }
 
-/* FAQ Layout styling */
 .faq-container {
     background: #fffdf9;
     border: 1px solid #f9ebd4;
@@ -207,7 +205,6 @@ h2 {
     color: #555;
 }
 
-/* Bottom CTA and Dual Button Grid Layouts */
 .cta-dark-box {
     background: #000000;
     color: #ffffff;
@@ -234,18 +231,18 @@ h2 {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    max-width: 400px;
+    max-width: 500px;
     margin: 0 auto;
 }
 
-.btn-primary, .btn-whatsapp {
+.btn-primary, .btn-whatsapp, .btn-email {
     display: block;
     text-decoration: none;
     padding: 14px;
     border-radius: 6px;
     font-weight: bold;
     text-transform: uppercase;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     text-align: center;
 }
 
@@ -255,7 +252,13 @@ h2 {
 }
 
 .btn-whatsapp {
-    background: #25d366; /* Official WhatsApp Brand Green */
+    background: #25d366;
+    color: #fff;
+}
+
+/* Corporate Blue for Mail Buttons */
+.btn-email {
+    background: #2980b9;
     color: #fff;
 }
 
@@ -272,30 +275,12 @@ footer {
     color: #888;
 }
 
-@media(min-width: 480px) {
+@media(min-width: 550px) {
     .contact-buttons {
         flex-direction: row;
         justify-content: center;
     }
-    .btn-primary, .btn-whatsapp {
+    .btn-primary, .btn-whatsapp, .btn-email {
         flex: 1;
     }
-}
-/* Alignment helpers for layout icons inside modern dynamic buttons */
-.contact-buttons i {
-    margin-right: 6px;
-    font-size: 1.05rem;
-    vertical-align: middle;
-}
-.contact-row i {
-    margin-right: 5px;
-}
-/* Alignment helpers for layout icons inside modern dynamic buttons */
-.contact-buttons i {
-    margin-right: 6px;
-    font-size: 1.05rem;
-    vertical-align: middle;
-}
-.contact-row i {
-    margin-right: 5px;
 }
