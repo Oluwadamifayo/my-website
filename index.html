@@ -106,6 +106,27 @@
         .btn-call { background-color: #f39c12; }
         .btn-whatsapp { background-color: #2ecc71; }
         .btn-email { background-color: #2980b9; }
+        
+        /* Email form styling layout */
+        .email-form-container {
+            margin-top: 25px;
+            text-align: left;
+        }
+        .email-form-container input, .email-form-container textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 12px;
+            border: 1px solid #444;
+            border-radius: 6px;
+            background-color: #111;
+            color: #fff;
+            font-size: 0.95rem;
+        }
+        .email-form-container input:focus, .email-form-container textarea:focus {
+            outline: none;
+            border-color: #f39c12;
+        }
+        
         .footer-text {
             text-align: center;
             padding: 25px;
@@ -157,7 +178,14 @@
             
             <a href="tel:+2347032145984" class="btn btn-call"><i class="fas fa-phone"></i> CALL NOW</a>
             <a href="https://wa.me/2347032145984" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WHATSAPP</a>
-            <a href="mailto:Balokingengineeringprojectltd@gmail.com" class="btn btn-email"><i class="fas fa-envelope"></i> EMAIL US</a>
+            
+            <div class="email-form-container">
+                <form action="https://formspree.io/f/xknpndpk" method="POST">
+                    <input type="email" name="email" placeholder="Your Email Address" required>
+                    <textarea name="message" rows="4" placeholder="Type your project consultation inquiry here..." required></textarea>
+                    <button type="submit" class="btn btn-email" style="margin: 0; width: 100%;"><i class="fas fa-envelope"></i> SEND EMAIL MESSAGE</button>
+                </form>
+            </div>
             
             <div style="margin-top: 25px; font-size: 0.9rem; text-align: left; padding-left: 15px; color: #bbb; line-height: 1.8;">
                 <p><i class="fas fa-envelope" style="color: #f39c12; margin-right: 10px;"></i> Balokingengineeringprojectltd@gmail.com</p>
@@ -172,3 +200,4 @@
 
 </body>
 </html>
+
