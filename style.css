@@ -281,3 +281,12 @@ footer {
         flex: 1;
     }
 }
+/* Alignment helpers for layout icons inside modern dynamic buttons */
+.contact-buttons i {
+    margin-right: 6px;
+    font-size: 1.05rem;
+    vertical-align: middle;
+}
+.contact-row i {
+    margin-right: 5px;
+}
