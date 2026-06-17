@@ -7,9 +7,11 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background-color: #f8fafc;
+    /* Soft premium Yellow and White mixed background gradient */
+    background: linear-gradient(135deg, #fffbeb 0%, #ffffff 100%);
     color: #1e293b;
     line-height: 1.7;
+    padding-bottom: 40px;
 }
 
 /* Luxury Sticky Navbar */
@@ -17,7 +19,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #0f172a; /* Sleek Dark Slate */
+    background: #0f172a; 
     padding: 15px 5%;
     position: sticky;
     top: 0;
@@ -25,7 +27,82 @@ body {
 }
 
 .navbar .logo {
-    color: #f97316; /* Clean vibrant flame orange */
+    color: #f97316; 
+    font-weight: 800;
+    font-size: 1.4rem;
+    letter-spacing: 0.5px;
+}
+
+.navbar .nav-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* Professional Hero Section */
+.hero {
+    background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h1 {
+    font-size: 2.3rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: #94a3b8;
+    max-width: 600px;
+    margin: 0 auto 25px auto;
+}
+
+.hero-btn {
+    display: inline-block;
+    background: #f97316;
+    color: white;
+    text-decoration: none;
+    padding: 14px 30px;
+    font-
+
+cat <<EOF > style.css
+/* Modern Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    /* Soft premium Yellow and White mixed background gradient */
+    background: linear-gradient(135deg, #fffbeb 0%, #ffffff 100%);
+    color: #1e293b;
+    line-height: 1.7;
+    padding-bottom: 40px;
+}
+
+/* Luxury Sticky Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0f172a; 
+    padding: 15px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar .logo {
+    color: #f97316; 
     font-weight: 800;
     font-size: 1.4rem;
     letter-spacing: 0.5px;
@@ -152,7 +229,7 @@ h2 {
 
 .cta-button {
     display: block;
-    background: #22c55e; /* Strong conversion green */
+    background: #22c55e; 
     color: white;
     text-align: center;
     padding: 16px;
