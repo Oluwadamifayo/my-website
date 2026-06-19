@@ -123,7 +123,7 @@
             display: block;
         }
         
-        /* New Premium Section Headings Styling */
+        /* Premium Section Headings Styling */
         .section-title {
             font-family: 'Montserrat', 'Arial Black', sans-serif;
             text-align: center;
@@ -136,7 +136,6 @@
             position: relative;
             padding-bottom: 8px;
         }
-        /* Adding a sleek decorative gold underline effect beneath titles */
         .section-title::after {
             content: '';
             display: block;
@@ -164,13 +163,15 @@
             border: 1px solid #f9ebd9;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
             
+            /* Initial Hidden Unfold State */
             opacity: 0;
-            transform: translateY(40px) scale(0.95);
-            transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
-                        transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+            transform: translateY(30px) scale(0.96);
+            transition: opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1), 
+                        transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
             will-change: transform, opacity;
         }
 
+        /* Revealed Visible State */
         .list-item.reveal {
             opacity: 1;
             transform: translateY(0) scale(1);
@@ -453,21 +454,18 @@
 
             const observerOptions = {
                 root: null,
-                rootMargin: "0px 0px -80px 0px",
-                threshold: 0.15
+                rootMargin: "-20px 0px -40px 0px", // Precision tuning for top and bottom screen edges
+                threshold: 0.1
             };
 
-            const revealObserver = new IntersectionObserver(function (entries, observer) {
+            const revealObserver = new IntersectionObserver(function (entries) {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
-                        const item = entry.target;
-                        const index = Array.from(listItems).indexOf(item);
-                        
-                        setTimeout(() => {
-                            item.classList.add("reveal");
-                        }, (index % 5) * 150);
-                        
-                        observer.unobserve(item);
+                        // Triggers unfolding instantly when scrolling down or back up into view
+                        entry.target.classList.add("reveal");
+                    } else {
+                        // Folds away gracefully when scrolled out of view completely
+                        entry.target.classList.remove("reveal");
                     }
                 });
             }, observerOptions);
