@@ -162,6 +162,36 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
+        /* Our Works Layout Configuration */
+        .works-section {
+            max-width: 600px;
+            margin: 10px auto 30px auto;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .work-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+        }
+        .work-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .work-card-title {
+            padding: 12px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            color: #222;
+            text-align: center;
+            background: #fafafa;
+            border-top: 1px solid #eee;
+        }
         .contact-box {
             background: #000;
             color: #fff;
@@ -277,6 +307,22 @@
             </div>
             <button type="submit" class="btn-submit">Submit Request</button>
         </form>
+    </section>
+
+    <div class="section-title">Our Works</div>
+    <section class="works-section">
+        <div class="work-card">
+            <img src="services.jpg" alt="LPG Storage Tank Installation">
+            <div class="work-card-title">LPG Gas Storage Tank Setup</div>
+        </div>
+        <div class="work-card">
+            <img src="project1.jpg" alt="Gas Plant Structural Engineering">
+            <div class="work-card-title">Plant Facility Construction</div>
+        </div>
+        <div class="work-card">
+            <img src="tank-project.jpg" alt="Pressure Vessel Testing">
+            <div class="work-card-title">Industrial Equipment Sourcing</div>
+        </div>
     </section>
 
     <section style="padding: 10px 20px;">
