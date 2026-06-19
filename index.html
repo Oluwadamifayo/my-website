@@ -10,7 +10,7 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Arial Black', Impact, 'Segoe UI', sans-serif;
         }
         body {
             background-color: #ffffff;
@@ -19,44 +19,94 @@
         }
         header {
             background: #ffffff;
-            padding: 25px 20px;
+            padding: 30px 15px 20px 15px;
             text-align: center;
-            border-bottom: 3px solid #e67e22;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-bottom: 1px solid #eee;
         }
-        .brand-container {
+        
+        /* Logo Container Matching the Image Template */
+        .logo-box {
             display: inline-block;
-            text-align: center;
+            position: relative;
+            text-align: left;
+            max-width: 360px;
+            margin: 0 auto;
         }
-        .brand-title {
-            font-size: 2.2rem;
-            font-weight: 800;
+        
+        /* RC Number Style */
+        .rc-number {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 0.75rem;
+            font-weight: 900;
+            color: #000000;
+            text-align: right;
+            position: absolute;
+            right: 2px;
+            top: -14px;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Main Brand Word Grid */
+        .main-logo-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: 900;
+            color: #e5a922; /* Matching the exact logo gold tone */
+            line-height: 0.95;
+            letter-spacing: -0.5px;
+        }
+        
+        /* Custom Oil Drop Emblem replacing the letter O */
+        .oil-drop-emblem {
+            width: 42px;
+            height: 42px;
+            background-color: #000000;
+            border-radius: 0 50% 50% 50%;
+            transform: rotate(-135deg);
+            margin: 0 4px 0 6px;
+            display: inline-block;
+            position: relative;
+            box-shadow: -2px 2px 0px rgba(229, 169, 34, 0.4);
+        }
+        
+        /* Left and Right Text Segments */
+        .text-side {
+            text-transform: uppercase;
+        }
+        
+        /* Lower Sub-branding String */
+        .logo-sub-text {
+            font-family: 'Arial', 'Segoe UI', sans-serif;
+            font-size: 0.92rem;
+            font-weight: 900;
             color: #000000;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            line-height: 1.0;
+            letter-spacing: 0.8px;
+            margin-top: 5px;
+            text-align: justify;
+            text-align-last: justify;
+            width: 100%;
+            border-top: 1px solid transparent;
         }
-        .brand-subtitle {
-            font-size: 0.85rem;
-            color: #e67e22;
-            font-weight: 700;
-            margin-top: 6px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            word-spacing: 2px;
-        }
+
+        /* Navigation menu rules */
         .nav-links {
-            margin-top: 20px;
+            margin-top: 25px;
+            text-align: center;
         }
         .nav-links a {
-            margin: 0 12px;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0 10px;
             text-decoration: none;
             color: #555555;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
         }
+
+        /* Rest of Website Layout rules */
         .banner-container {
             text-align: center;
             padding: 0px;
@@ -107,6 +157,7 @@
             flex-shrink: 0;
         }
         .item-text {
+            font-family: 'Segoe UI', sans-serif;
             font-size: 1rem;
             color: #333;
             font-weight: 500;
@@ -127,6 +178,7 @@
             font-weight: bold;
         }
         .faq-item p {
+            font-family: 'Segoe UI', sans-serif;
             font-size: 0.95rem;
             color: #555;
         }
@@ -142,6 +194,7 @@
             margin-bottom: 15px;
         }
         .form-group label {
+            font-family: 'Segoe UI', sans-serif;
             display: block;
             font-size: 0.9rem;
             font-weight: bold;
@@ -149,6 +202,7 @@
             color: #333;
         }
         .form-group input, .form-group textarea {
+            font-family: 'Segoe UI', sans-serif;
             width: 100%;
             padding: 12px;
             border: 1px solid #ccc;
@@ -156,7 +210,6 @@
             font-size: 0.95rem;
         }
         .form-group textarea {
-            resize: vertical;
             height: 120px;
         }
         .btn-submit {
@@ -170,7 +223,6 @@
             cursor: pointer;
             width: 100%;
             text-transform: uppercase;
-            letter-spacing: 1px;
         }
         .works-section {
             max-width: 600px;
@@ -193,6 +245,7 @@
             display: block;
         }
         .work-card-title {
+            font-family: 'Segoe UI', sans-serif;
             padding: 12px;
             font-size: 0.95rem;
             font-weight: bold;
@@ -213,6 +266,7 @@
             border-left: 5px solid #e67e22;
         }
         .btn {
+            font-family: 'Segoe UI', sans-serif;
             display: block;
             width: 100%;
             padding: 15px;
@@ -222,16 +276,15 @@
             font-size: 1rem;
             font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: 1px;
             text-decoration: none;
             color: #fff;
-            cursor: pointer;
             text-align: center;
         }
         .btn-call { background-color: #f39c12; }
         .btn-whatsapp { background-color: #2ecc71; }
         .btn-email { background-color: #2980b9; }
         .footer-text {
+            font-family: 'Segoe UI', sans-serif;
             text-align: center;
             padding: 25px;
             font-size: 0.85rem;
@@ -244,10 +297,16 @@
 <body>
 
     <header>
-        <div class="brand-container">
-            <div class="brand-title">Baloking</div>
-            <div class="brand-subtitle">Engineering Project Limited</div>
+        <div class="logo-box">
+            <div class="rc-number">RC: 7903143</div>
+            <div class="main-logo-row">
+                <span class="text-side">BAL</span>
+                <span class="oil-drop-emblem"></span>
+                <span class="text-side">KING</span>
+            </div>
+            <div class="logo-sub-text">Engineering Project Limited</div>
         </div>
+        
         <div class="nav-links">
             <a href="#">Services</a>
             <a href="#">Get a Quote</a>
@@ -288,7 +347,7 @@
     <section class="faq-section">
         <div class="faq-item">
             <h3>What is the typical timeline for an LPG plant construction project?</h3>
-            <p>Timelines vary based on the plant scale, site approvals, and technical configurations. Contact our consultation team for a precise engineering blueprint schedule.</p>
+            <p>Timelines vary based on the plant scale, site approvals, and technical configurations.</p>
         </div>
         <hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 25px;">
         <div class="faq-item">
