@@ -152,7 +152,22 @@
             padding: 0 20px;
         }
 
-        /* Unfolding Scroll Effects CSS */
+        /* Shared Unfolding Scroll Effects CSS Class */
+        .reveal-item {
+            opacity: 0;
+            transform: translateY(30px) scale(0.96);
+            transition: opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1), 
+                        transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            will-change: transform, opacity;
+        }
+
+        /* Revealed Visible State for both items */
+        .reveal-item.reveal {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        /* List Items styling */
         .list-item {
             display: flex;
             align-items: center;
@@ -162,19 +177,6 @@
             border-radius: 30px;
             border: 1px solid #f9ebd9;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
-            
-            /* Initial Hidden Unfold State */
-            opacity: 0;
-            transform: translateY(30px) scale(0.96);
-            transition: opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1), 
-                        transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-            will-change: transform, opacity;
-        }
-
-        /* Revealed Visible State */
-        .list-item.reveal {
-            opacity: 1;
-            transform: translateY(0) scale(1);
         }
 
         .item-number {
@@ -258,20 +260,22 @@
             width: 100%;
             text-transform: uppercase;
         }
+        
+        /* Updated Premium Portfolio Layout style */
         .works-section {
             max-width: 600px;
             margin: 10px auto 30px auto;
             padding: 0 20px;
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 20px;
         }
         .work-card {
             background: #fff;
-            border-radius: 8px;
+            border-radius: 20px; /* Rounded curves to match list style */
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            border: 1px solid #eee;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.04);
+            border: 1px solid #f0f0f0;
         }
         .work-card img {
             width: 100%;
@@ -280,13 +284,13 @@
         }
         .work-card-title {
             font-family: 'Segoe UI', sans-serif;
-            padding: 12px;
+            padding: 15px;
             font-size: 0.95rem;
-            font-weight: bold;
+            font-weight: 700;
             color: #222;
             text-align: center;
-            background: #fafafa;
-            border-top: 1px solid #eee;
+            background: #fdfaf6;
+            border-top: 1px solid #f9ebd9;
         }
         .contact-box {
             background: #000;
@@ -355,23 +359,23 @@
 
     <div class="section-title">Our Oil & Gas Construction</div>
     <section class="construction-list">
-        <div class="list-item">
+        <div class="list-item reveal-item">
             <div class="item-number">1</div>
             <div class="item-text">Feasibility Study & Business Planning</div>
         </div>
-        <div class="list-item">
+        <div class="list-item reveal-item">
             <div class="item-number">2</div>
             <div class="item-text">Location Selection & Site Inspection</div>
         </div>
-        <div class="list-item">
+        <div class="list-item reveal-item">
             <div class="item-number">3</div>
             <div class="item-text">DPR/LPG License Guidance</div>
         </div>
-        <div class="list-item">
+        <div class="list-item reveal-item">
             <div class="item-number">4</div>
             <div class="item-text">Gas Plant Construction Consultation</div>
         </div>
-        <div class="list-item">
+        <div class="list-item reveal-item">
             <div class="item-number">5</div>
             <div class="item-text">Equipment Sourcing & Installation Support</div>
         </div>
@@ -415,15 +419,15 @@
 
     <div class="section-title">Our Works</div>
     <section class="works-section">
-        <div class="work-card">
+        <div class="work-card reveal-item">
             <img src="project1.jpg" alt="Gas Plant Structural Engineering">
             <div class="work-card-title">Plant Facility Construction</div>
         </div>
-        <div class="work-card">
+        <div class="work-card reveal-item">
             <img src="https://i.ibb.co/fJSKJnV/IMG-20260617-WA0013-1.jpg" alt="2.5 Metric Tons Setup">
             <div class="work-card-title">2.5 metric tons</div>
         </div>
-        <div class="work-card">
+        <div class="work-card reveal-item">
             <img src="https://i.ibb.co/WQNxmkH/IMG-20260617-WA0009-1.jpg" alt="2.5 Metric Tons Setup with Dispenser">
             <div class="work-card-title">2.5 metric tons fully constructed with dispenser</div>
         </div>
@@ -450,27 +454,26 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const listItems = document.querySelectorAll(".list-item");
+            // Track all elements with the .reveal-item class
+            const scrollItems = document.querySelectorAll(".reveal-item");
 
             const observerOptions = {
                 root: null,
-                rootMargin: "-20px 0px -40px 0px", // Precision tuning for top and bottom screen edges
+                rootMargin: "-20px 0px -40px 0px", 
                 threshold: 0.1
             };
 
             const revealObserver = new IntersectionObserver(function (entries) {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
-                        // Triggers unfolding instantly when scrolling down or back up into view
                         entry.target.classList.add("reveal");
                     } else {
-                        // Folds away gracefully when scrolled out of view completely
                         entry.target.classList.remove("reveal");
                     }
                 });
             }, observerOptions);
 
-            listItems.forEach((item) => {
+            scrollItems.forEach((item) => {
                 revealObserver.observe(item);
             });
         });
