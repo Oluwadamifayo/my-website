@@ -18,49 +18,67 @@
             line-height: 1.6;
         }
         header {
-            background: #fff;
-            padding: 20px;
+            background: #111111;
+            padding: 25px 20px;
             text-align: center;
-            border-bottom: 4px solid #e67e22;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border-bottom: 3px solid #e67e22;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        .brand-container {
+            display: inline-block;
+            text-align: center;
         }
         .brand-title {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #000;
+            font-size: 2.1rem;
+            font-weight: 900;
+            color: #ffffff;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            line-height: 1.1;
         }
         .brand-subtitle {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: #e67e22;
-            font-weight: bold;
-            margin-top: 2px;
+            font-weight: 700;
+            margin-top: 4px;
             text-transform: uppercase;
+            letter-spacing: 4px;
         }
         .brand-limited {
-            font-size: 1.1rem;
-            color: #555;
-            font-weight: 600;
-            margin-top: 2px;
+            font-size: 0.85rem;
+            color: #aaaaaa;
+            font-weight: 500;
+            margin-top: 5px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 5px;
+            border-top: 1px solid #333;
+            padding-top: 5px;
+            display: inline-block;
+            width: 100%;
         }
         .nav-links {
-            margin-top: 15px;
+            margin-top: 20px;
+            border-top: 1px solid #222;
+            padding-top: 15px;
         }
         .nav-links a {
-            margin: 0 10px;
+            margin: 0 12px;
             text-decoration: none;
-            color: #555;
+            color: #bbbbbb;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #e67e22;
         }
         .banner-container {
             text-align: center;
             padding: 0px;
             max-width: 600px;
-            margin: 20px auto 10px auto;
+            margin: 25px auto 10px auto;
         }
         .banner-img {
             width: 100%;
@@ -243,9 +261,11 @@
 <body>
 
     <header>
-        <div class="brand-title">Baloking</div>
-        <div class="brand-subtitle">Engineering</div>
-        <div class="brand-limited">Project Limited</div>
+        <div class="brand-container">
+            <div class="brand-title">Baloking</div>
+            <div class="brand-subtitle">Engineering</div>
+            <div class="brand-limited">Project Limited</div>
+        </div>
         <div class="nav-links">
             <a href="#">Services</a>
             <a href="#">Get a Quote</a>
