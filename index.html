@@ -161,7 +161,7 @@
             will-change: transform, opacity;
         }
 
-        /* Revealed Visible State for both items */
+        /* Revealed Visible State for everything */
         .reveal-item.reveal {
             opacity: 1;
             transform: translateY(0) scale(1);
@@ -261,7 +261,6 @@
             text-transform: uppercase;
         }
         
-        /* Updated Premium Portfolio Layout style */
         .works-section {
             max-width: 600px;
             margin: 10px auto 30px auto;
@@ -272,7 +271,7 @@
         }
         .work-card {
             background: #fff;
-            border-radius: 20px; /* Rounded curves to match list style */
+            border-radius: 20px; 
             overflow: hidden;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.04);
             border: 1px solid #f0f0f0;
@@ -434,7 +433,7 @@
     </section>
 
     <section style="padding: 10px 20px;">
-        <div class="contact-box">
+        <div class="contact-box reveal-item">
             <h2 style="color: #f39c12; font-size: 1.3rem; margin-bottom: 10px; font-weight: bold; text-transform: uppercase;">Ready to Launch your Gas Plant Business?</h2>
             <p style="font-size: 0.95rem; color: #ddd; margin-bottom: 25px;">Contact us today for professional consultation and setup guidance.</p>
             
@@ -454,7 +453,6 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Track all elements with the .reveal-item class
             const scrollItems = document.querySelectorAll(".reveal-item");
 
             const observerOptions = {
