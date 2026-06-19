@@ -59,17 +59,17 @@
             letter-spacing: -0.5px;
         }
         
-        /* Custom Oil Drop Emblem replacing the letter O */
+        /* Custom Oil Drop Emblem flipped upside down */
         .oil-drop-emblem {
             width: 42px;
             height: 42px;
             background-color: #000000;
             border-radius: 0 50% 50% 50%;
-            transform: rotate(-135deg);
+            transform: rotate(45deg); /* Flipped to point straight down */
             margin: 0 4px 0 6px;
             display: inline-block;
             position: relative;
-            box-shadow: -2px 2px 0px rgba(229, 169, 34, 0.4);
+            box-shadow: 2px 2px 0px rgba(229, 169, 34, 0.4);
         }
         
         /* Left and Right Text Segments */
@@ -136,7 +136,7 @@
             padding: 0 20px;
         }
 
-        /* --- Unfolding Scroll Effects CSS --- */
+        /* Unfolding Scroll Effects CSS */
         .list-item {
             display: flex;
             align-items: center;
@@ -155,7 +155,7 @@
             will-change: transform, opacity;
         }
 
-        /* Revealed Visible State triggered by JavaScript Scroll observer */
+        /* Revealed Visible State */
         .list-item.reveal {
             opacity: 1;
             transform: translateY(0) scale(1);
@@ -438,23 +438,21 @@
 
             const observerOptions = {
                 root: null,
-                rootMargin: "0px 0px -80px 0px", // Triggers slightly before element leaves bottom view
+                rootMargin: "0px 0px -80px 0px",
                 threshold: 0.15
             };
 
             const revealObserver = new IntersectionObserver(function (entries, observer) {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
-                        // Gather all entries intersecting to apply sequential delay
                         const item = entry.target;
                         const index = Array.from(listItems).indexOf(item);
                         
-                        // Set staggered cascading timing based on row sequence
                         setTimeout(() => {
                             item.classList.add("reveal");
-                        }, (index % 5) * 150); // 150ms delay steps
+                        }, (index % 5) * 150);
                         
-                        observer.unobserve(item); // Animations run once flawlessly
+                        observer.unobserve(item);
                     }
                 });
             }, observerOptions);
