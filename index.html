@@ -5,123 +5,296 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Baloking Engineering Project Limited</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #ffffff;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background: #fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 4px solid #e67e22;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .brand-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .brand-subtitle {
+            font-size: 1.4rem;
+            color: #e67e22;
+            font-weight: bold;
+            margin-top: 2px;
+        }
+        .nav-links {
+            margin-top: 15px;
+        }
+        .nav-links a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #555;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin: 30px 0 15px 0;
+            color: #000;
+        }
+        .banner-container {
+            text-align: center;
+            padding: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .banner-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+        .construction-list {
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            padding: 0 20px;
+        }
+        .list-item {
+            display: flex;
+            align-items: center;
+            background: #fdfaf6;
+            margin-bottom: 12px;
+            padding: 15px;
+            border-radius: 30px;
+            border: 1px solid #f9ebd9;
+        }
+        .item-number {
+            background: #000;
+            color: #fff;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        .item-text {
+            font-size: 1rem;
+            color: #333;
+            font-weight: 500;
+        }
+        .faq-section {
+            background: #fff;
+            padding: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            margin-bottom: 25px;
+        }
+        .faq-item h3 {
+            font-size: 1.1rem;
+            color: #000;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .faq-item p {
+            font-size: 0.95rem;
+            color: #555;
+        }
+        .form-section {
+            max-width: 550px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 0.95rem;
+        }
+        .form-group textarea {
+            resize: vertical;
+            height: 120px;
+        }
+        .btn-submit {
+            background: #e67e22;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .contact-box {
+            background: #000;
+            color: #fff;
+            padding: 40px 20px;
+            border-radius: 12px;
+            max-width: 550px;
+            margin: 40px auto;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+            border-left: 5px solid #e67e22;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin: 15px 0;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            color: #fff;
+            cursor: pointer;
+            text-align: center;
+        }
+        .btn-call { background-color: #f39c12; }
+        .btn-whatsapp { background-color: #2ecc71; }
+        .btn-email { background-color: #2980b9; }
+        .footer-text {
+            text-align: center;
+            padding: 25px;
+            font-size: 0.85rem;
+            color: #888;
+            background: #fff;
+            border-top: 1px solid #eee;
+        }
+    </style>
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="logo">BALOKING <span class="sub-logo">ENGINEERING</span></div>
+    <header>
+        <div class="brand-title">Baloking</div>
+        <div class="brand-subtitle">Engineering</div>
         <div class="nav-links">
-            <a href="#services">Services</a>
-            <a href="#quote">Get a Quote</a>
-            <a href="#faq">FAQ</a>
-            <a href="#contact">Contact</a>
+            <a href="#">Services</a>
+            <a href="#">Get a Quote</a>
+            <a href="#">FAQ</a>
+            <a href="#">Contact</a>
         </div>
-    </nav>
+    </header>
 
-    <main class="container">
-        
-        <header class="header-main">
-            <p class="subtitle">FROM CONCEPT TO COMMISSIONING</p>
-            <h1>YOUR COMPLETE <br><span class="highlight">OIL & GAS PROJECT PARTNER</span></h1>
-            <p class="tagline-text">End-to-End Construction Solutions | Safety | Quality | Performance</p>
-        </header>
+    <div class="banner-container" style="margin-top: 20px;">
+        <img src="project1.jpg" alt="Your Complete Oil & Gas Project Partner" class="banner-img">
+    </div>
 
-        <section class="image-section">
-            <img src="flyer.jpg" alt="Baloking Engineering Project Flyer" class="project-flyer">
-        </section>
+    <div class="section-title">Our Oil & Gas Construction</div>
+    <section class="construction-list">
+        <div class="list-item">
+            <div class="item-number">1</div>
+            <div class="item-text">Feasibility Study & Business Planning</div>
+        </div>
+        <div class="list-item">
+            <div class="item-number">2</div>
+            <div class="item-text">Location Selection & Site Inspection</div>
+        </div>
+        <div class="list-item">
+            <div class="item-number">3</div>
+            <div class="item-text">DPR/LPG License Guidance</div>
+        </div>
+        <div class="list-item">
+            <div class="item-number">4</div>
+            <div class="item-text">Gas Plant Construction Consultation</div>
+        </div>
+        <div class="list-item">
+            <div class="item-number">5</div>
+            <div class="item-text">Equipment Sourcing & Installation Support</div>
+        </div>
+    </section>
 
-        <section id="services" class="services-section">
-            <h2>OUR OIL & GAS CONSTRUCTION</h2>
+    <div class="section-title">FAQ</div>
+    <section class="faq-section">
+        <div class="faq-item">
+            <h3>What is the typical timeline for an LPG plant construction project?</h3>
+            <p>Timelines vary based on the plant scale, site approvals, and technical configurations. Contact our consultation team for a precise engineering blueprint schedule.</p>
+        </div>
+        <hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 25px;">
+        <div class="faq-item">
+            <h3>Do you assist with full DPR/NMDPRA licensing documentation?</h3>
+            <p>Yes, we provide step-by-step guidance and technical framework advisory to ensure your operation fulfills standard local regulatory requirements completely.</p>
+        </div>
+    </section>
+
+    <div class="section-title">Request a Project Quote</div>
+    <section class="form-section">
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required placeholder="Enter your full name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email address">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required placeholder="How can we assist with your gas project?"></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Submit Request</button>
+        </form>
+    </section>
+
+    <section style="padding: 10px 20px;">
+        <div class="contact-box">
+            <h2 style="color: #f39c12; font-size: 1.3rem; margin-bottom: 10px; font-weight: bold; text-transform: uppercase;">Ready to Launch your Gas Plant Business?</h2>
+            <p style="font-size: 0.95rem; color: #ddd; margin-bottom: 25px;">Contact us today for professional consultation and setup guidance.</p>
             
-            <div class="step-card">
-                <span class="step-num">1</span>
-                <h3>Feasibility Study & Business Planning</h3>
-            </div>
-            <div class="step-card">
-                <span class="step-num">2</span>
-                <h3>Location Selection & Site Inspection</h3>
-            </div>
-            <div class="step-card">
-                <span class="step-num">3</span>
-                <h3>DPR/LPG License Guidance</h3>
-            </div>
-            <div class="step-card">
-                <span class="step-num">4</span>
-                <h3>Gas Plant Construction Consultation</h3>
-            </div>
-            <div class="step-card">
-                <span class="step-num">5</span>
-                <h3>Equipment Sourcing & Installation Support</h3>
-            </div>
-        </section>
-
-        <section id="quote" class="form-section">
-            <h2>REQUEST A PROJECT QUOTE</h2>
-            <p class="form-intro">Fill out the details below, and our engineering consultants will reach out to you.</p>
-            <form action="https://formspree.io/f/placeholder" method="POST" class="quote-form">
-                <div class="form-group">
-                    <label for="name">Full Name / Company Name</label>
-                    <input type="text" id="name" name="name" required placeholder="e.g., John Doe Enterprises">
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" required placeholder="e.g., +234...">
-                </div>
-                <div class="form-group">
-                    <label for="service">Required Service</label>
-                    <select id="service" name="service" required>
-                        <option value="">-- Select a Service --</option>
-                        <option value="feasibility">Feasibility Study & Planning</option>
-                        <option value="site-inspection">Location Selection & Site Inspection</option>
-                        <option value="licensing">DPR / LPG License Guidance</option>
-                        <option value="construction">Gas Plant Construction Consultation</option>
-                        <option value="equipment">Equipment Sourcing & Installation</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="message">Project Brief / Message</label>
-                    <textarea id="message" name="message" rows="4" placeholder="Describe your project location, scale, or requirements..."></textarea>
-                </div>
-                <button type="submit" class="btn-submit">Submit Request</button>
-            </form>
-        </section>
-
-        <section id="faq" class="faq-section">
-            <h2>FREQUENTLY ASKED QUESTIONS</h2>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">What is the typical timeline for an LPG plant construction project?</div>
-                    <div class="faq-answer">Timelines vary based on the plant scale, site approvals, and technical configurations. Contact our consultation team for a precise engineering blueprint schedule.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Do you assist with full DPR/NMDPRA licensing documentation?</div>
-                    <div class="faq-answer">Yes, we provide step-by-step guidance and technical framework advisory to ensure your operation fulfills standard local regulatory requirements completely.</div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="cta-dark-box">
-            <h3>READY TO LAUNCH YOUR GAS PLANT BUSINESS?</h3>
-            <p>Contact us today for professional consultation and setup guidance.</p>
+            <a href="tel:+2347032145984" class="btn btn-call"><i class="fas fa-phone"></i> CALL NOW</a>
+            <a href="https://wa.me/2347032145984" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WHATSAPP CHAT</a>
+            <a href="mailto:Balokingengineeringprojectltd@gmail.com" class="btn btn-email"><i class="fas fa-envelope"></i> EMAIL US</a>
             
-            <div class="contact-buttons">
-                <a href="tel:+2347032145984" class="btn-primary"><i class="fa-solid fa-phone"></i> Call Now</a>
-                <a href="https://wa.me/2347032145984?text=Hello%20Baloking%20Engineering%2C%20I%20would%20like%20to%20inquire%20about%20your%20gas%20plant%20construction%20services." target="_blank" class="btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-                <a href="mailto:Balokingengineeringprojectltd@gmail.com" class="btn-email"><i class="fa-solid fa-envelope"></i> Email Us</a>
+            <div style="margin-top: 25px; font-size: 0.9rem; text-align: left; padding-left: 15px; color: #bbb; line-height: 1.8;">
+                <p><i class="fab fa-instagram" style="color: #f39c12; margin-right: 10px;"></i> @Baloking_gas_ng</p>
             </div>
-            
-            <div class="contact-row" style="margin-top: 25px; flex-direction: column; gap: 8px;">
-                <p style="color: #f39c12; font-size: 0.95rem;"><i class="fa-solid fa-envelope"></i> Balokingengineeringprojectltd@gmail.com</p>
-                <span class="instagram-handle" style="color: #ccc;"><i class="fa-brands fa-instagram"></i> @Baloking_gas_ng</span>
-            </div>
-        </section>
+        </div>
+    </section>
 
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Baloking Engineering Project Limited. All Rights Reserved.</p>
-    </footer>
+    <div class="footer-text">
+        &copy; 2026 Baloking Engineering Project Limited. All Rights Reserved.
+    </div>
 
 </body>
 </html>
