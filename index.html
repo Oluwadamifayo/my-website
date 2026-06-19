@@ -16,6 +16,7 @@
             background-color: #ffffff;
             color: #333;
             line-height: 1.6;
+            overflow-x: hidden;
         }
         header {
             background: #ffffff;
@@ -134,20 +135,37 @@
             margin: 10px auto 30px auto;
             padding: 0 20px;
         }
+
+        /* --- Unfolding Scroll Effects CSS --- */
         .list-item {
             display: flex;
             align-items: center;
             background: #fdfaf6;
-            margin-bottom: 12px;
-            padding: 15px;
+            margin-bottom: 15px;
+            padding: 18px;
             border-radius: 30px;
             border: 1px solid #f9ebd9;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+            
+            /* Initial Hidden Unfold State */
+            opacity: 0;
+            transform: translateY(40px) scale(0.95);
+            transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
+                        transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+            will-change: transform, opacity;
         }
+
+        /* Revealed Visible State triggered by JavaScript Scroll observer */
+        .list-item.reveal {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
         .item-number {
             background: #000;
             color: #fff;
-            width: 30px;
-            height: 30px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -160,7 +178,7 @@
             font-family: 'Segoe UI', sans-serif;
             font-size: 1rem;
             color: #333;
-            font-weight: 500;
+            font-weight: 600;
         }
         .faq-section {
             background: #fff;
@@ -413,6 +431,39 @@
     <div class="footer-text">
         &copy; 2026 Baloking Engineering Project Limited. All Rights Reserved.
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const listItems = document.querySelectorAll(".list-item");
+
+            const observerOptions = {
+                root: null,
+                rootMargin: "0px 0px -80px 0px", // Triggers slightly before element leaves bottom view
+                threshold: 0.15
+            };
+
+            const revealObserver = new IntersectionObserver(function (entries, observer) {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        // Gather all entries intersecting to apply sequential delay
+                        const item = entry.target;
+                        const index = Array.from(listItems).indexOf(item);
+                        
+                        // Set staggered cascading timing based on row sequence
+                        setTimeout(() => {
+                            item.classList.add("reveal");
+                        }, (index % 5) * 150); // 150ms delay steps
+                        
+                        observer.unobserve(item); // Animations run once flawlessly
+                    }
+                });
+            }, observerOptions);
+
+            listItems.forEach((item) => {
+                revealObserver.observe(item);
+            });
+        });
+    </script>
 
 </body>
 </html>
