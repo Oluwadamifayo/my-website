@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>balokingengineeringprojectltd</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
@@ -54,7 +55,7 @@
             justify-content: center;
             font-size: 3rem;
             font-weight: 900;
-            color: #e5a922; /* Matching the exact logo gold tone */
+            color: #e5a922; 
             line-height: 0.95;
             letter-spacing: -0.5px;
         }
@@ -65,7 +66,7 @@
             height: 42px;
             background-color: #000000;
             border-radius: 0 50% 50% 50%;
-            transform: rotate(45deg); /* Flipped to point straight down */
+            transform: rotate(45deg); 
             margin: 0 4px 0 6px;
             display: inline-block;
             position: relative;
@@ -121,15 +122,31 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.06);
             display: block;
         }
+        
+        /* New Premium Section Headings Styling */
         .section-title {
+            font-family: 'Montserrat', 'Arial Black', sans-serif;
             text-align: center;
-            font-size: 1.4rem;
-            font-weight: bold;
-            letter-spacing: 1px;
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            margin: 35px 0 15px 0;
-            color: #000;
+            margin: 45px 0 20px 0;
+            color: #111111;
+            position: relative;
+            padding-bottom: 8px;
         }
+        /* Adding a sleek decorative gold underline effect beneath titles */
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: #e5a922;
+            margin: 8px auto 0 auto;
+            border-radius: 2px;
+        }
+
         .construction-list {
             max-width: 600px;
             margin: 10px auto 30px auto;
@@ -147,7 +164,6 @@
             border: 1px solid #f9ebd9;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
             
-            /* Initial Hidden Unfold State */
             opacity: 0;
             transform: translateY(40px) scale(0.95);
             transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
@@ -155,7 +171,6 @@
             will-change: transform, opacity;
         }
 
-        /* Revealed Visible State */
         .list-item.reveal {
             opacity: 1;
             transform: translateY(0) scale(1);
