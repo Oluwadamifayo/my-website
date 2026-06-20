@@ -291,8 +291,17 @@
             background: #fdfaf6;
             border-top: 1px solid #f9ebd9;
         }
+        
+        /* Premium Contact Box with Watermarked Logo Background Configuration */
         .contact-box {
-            background: #000;
+            position: relative;
+            background-color: #000000;
+            /* Blending linear color layer with your background logo watermark */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.82)), 
+                              url('https://i.ibb.co/21tdB8P5/147909-removebg-preview-1.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 80% auto;
             color: #fff;
             padding: 40px 20px;
             border-radius: 12px;
@@ -301,6 +310,7 @@
             text-align: center;
             box-shadow: 0 10px 25px rgba(0,0,0,0.25);
             border-left: 5px solid #e67e22;
+            z-index: 1;
         }
         .btn {
             font-family: 'Segoe UI', sans-serif;
