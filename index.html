@@ -292,26 +292,32 @@
             border-top: 1px solid #f9ebd9;
         }
         
-        /* Premium Contact Box with Watermarked Logo Background Configuration */
+        /* Optimized Contact Box Watermark layering */
         .contact-box {
             position: relative;
             background-color: #000000;
-            /* Blending linear color layer with your background logo watermark */
-            background-image: linear-gradient(rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.82)), 
+            /* Direct CSS image embedding overlay */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), 
                               url('https://i.ibb.co/21tdB8P5/147909-removebg-preview-1.png');
-            background-position: center;
+            background-position: center center;
             background-repeat: no-repeat;
-            background-size: 80% auto;
+            background-size: 75% auto;
             color: #fff;
-            padding: 40px 20px;
+            padding: 45px 20px;
             border-radius: 12px;
             max-width: 550px;
             margin: 40px auto;
             text-align: center;
             box-shadow: 0 10px 25px rgba(0,0,0,0.25);
             border-left: 5px solid #e67e22;
-            z-index: 1;
         }
+        
+        /* Make sure content elements sit cleanly above background layer */
+        .contact-box h2, .contact-box p, .contact-box a, .contact-box div {
+            position: relative;
+            z-index: 2;
+        }
+        
         .btn {
             font-family: 'Segoe UI', sans-serif;
             display: block;
@@ -448,7 +454,7 @@
 
     <section style="padding: 10px 20px;">
         <div class="contact-box reveal-item">
-            <h2 style="color: #f39c12; font-size: 1.3rem; margin-bottom: 10px; font-weight: bold; text-transform: uppercase;">Ready to Launch your Gas Plant Business?</h2>
+            <h2>Ready to Launch your Gas Plant Business?</h2>
             <p style="font-size: 0.95rem; color: #ddd; margin-bottom: 25px;">Contact us today for professional consultation and setup guidance.</p>
             
             <a href="tel:+2347032145984" class="btn btn-call"><i class="fas fa-phone"></i> CALL NOW</a>
