@@ -13,14 +13,23 @@
             padding: 0;
             font-family: 'Arial Black', Impact, 'Segoe UI', sans-serif;
         }
+        
+        /* Watermark Applied to Entire Website Background */
         body {
             background-color: #ffffff;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.94)), 
+                              url('https://i.ibb.co/21tdB8P5/147909-removebg-preview-1.png');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 85% auto;
+            background-attachment: fixed; /* Keeps the watermark steady as you scroll */
             color: #333;
             line-height: 1.6;
             overflow-x: hidden;
         }
+        
         header {
-            background: #ffffff;
+            background: rgba(255, 255, 255, 0.95);
             padding: 30px 15px 20px 15px;
             text-align: center;
             border-bottom: 1px solid #eee;
@@ -171,7 +180,7 @@
         .list-item {
             display: flex;
             align-items: center;
-            background: #fdfaf6;
+            background: rgba(253, 250, 246, 0.9);
             margin-bottom: 15px;
             padding: 18px;
             border-radius: 30px;
@@ -199,7 +208,7 @@
             font-weight: 600;
         }
         .faq-section {
-            background: #fff;
+            background: transparent;
             padding: 20px;
             max-width: 700px;
             margin: 0 auto;
@@ -222,7 +231,7 @@
             max-width: 550px;
             margin: 30px auto;
             padding: 20px;
-            background: #f9f9f9;
+            background: rgba(249, 249, 249, 0.95);
             border-radius: 8px;
             border: 1px solid #eee;
         }
@@ -244,6 +253,7 @@
             border: 1px solid #ccc;
             border-radius: 4px;
             font-size: 0.95rem;
+            background: #ffffff;
         }
         .form-group textarea {
             height: 120px;
@@ -292,15 +302,10 @@
             border-top: 1px solid #f9ebd9;
         }
         
-        /* Optimized Contact Box Watermark layering */
+        /* Clean Black Contact Card */
         .contact-box {
             position: relative;
             background-color: #000000;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), 
-                              url('https://i.ibb.co/21tdB8P5/147909-removebg-preview-1.png');
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-size: 75% auto;
             color: #fff;
             padding: 45px 20px;
             border-radius: 12px;
@@ -309,11 +314,6 @@
             text-align: center;
             box-shadow: 0 10px 25px rgba(0,0,0,0.25);
             border-left: 5px solid #e67e22;
-        }
-        
-        .contact-box h2, .contact-box p, .contact-box a, .contact-box div {
-            position: relative;
-            z-index: 2;
         }
         
         .btn {
@@ -340,7 +340,7 @@
             padding: 25px;
             font-size: 0.85rem;
             color: #888;
-            background: #fff;
+            background: rgba(255, 255, 255, 0.9);
             border-top: 1px solid #eee;
         }
     </style>
@@ -426,7 +426,9 @@
                 <label for="message">Message</label>
                 <textarea id="message" name="message" required placeholder="How can we assist with your gas project?"></textarea>
             </div>
-            <button type="submit" class="btn-submit">Submit Request</button>
+            <div class="btn-group">
+                <button type="submit" class="btn-submit">Submit Request</button>
+            </div>
         </form>
     </section>
 
