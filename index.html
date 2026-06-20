@@ -14,18 +14,28 @@
             font-family: 'Arial Black', Impact, 'Segoe UI', sans-serif;
         }
         
-        /* Fixed, Bolder Global Watermark Background */
         body {
             background-color: #ffffff;
-            background-image: linear-gradient(rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.82)), 
+            color: #333;
+            line-height: 1.6;
+            position: relative;
+            min-height: 100vh;
+        }
+        
+        /* Fixed, Bolder and Stable Watermark Wrapper */
+        .stable-watermark-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Keeps it behind all content */
+            pointer-events: none; /* Prevents blocking clicks/taps */
+            background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), 
                               url('https://i.ibb.co/21tdB8P5/147909-removebg-preview-1.png');
             background-position: center center;
             background-repeat: no-repeat;
-            background-size: 85% auto;
-            background-attachment: fixed; /* Keeps the watermark completely still while scrolling */
-            color: #333;
-            line-height: 1.6;
-            overflow-x: hidden;
+            background-size: 90% auto;
         }
         
         header {
@@ -33,6 +43,8 @@
             padding: 30px 15px 20px 15px;
             text-align: center;
             border-bottom: 1px solid #eee;
+            position: relative;
+            z-index: 10;
         }
         
         /* Logo Container Matching the Image Template */
@@ -123,6 +135,8 @@
             padding: 0px;
             max-width: 600px;
             margin: 25px auto 10px auto;
+            position: relative;
+            z-index: 5;
         }
         .banner-img {
             width: 100%;
@@ -144,6 +158,7 @@
             color: #111111;
             position: relative;
             padding-bottom: 8px;
+            z-index: 5;
         }
         .section-title::after {
             content: '';
@@ -159,6 +174,8 @@
             max-width: 600px;
             margin: 10px auto 30px auto;
             padding: 0 20px;
+            position: relative;
+            z-index: 5;
         }
 
         /* Shared Unfolding Scroll Effects CSS Class */
@@ -212,6 +229,8 @@
             padding: 20px;
             max-width: 700px;
             margin: 0 auto;
+            position: relative;
+            z-index: 5;
         }
         .faq-item {
             margin-bottom: 25px;
@@ -234,6 +253,8 @@
             background: rgba(249, 249, 249, 0.9);
             border-radius: 8px;
             border: 1px solid #eee;
+            position: relative;
+            z-index: 5;
         }
         .form-group {
             margin-bottom: 15px;
@@ -278,6 +299,8 @@
             display: flex;
             flex-direction: column;
             gap: 20px;
+            position: relative;
+            z-index: 5;
         }
         .work-card {
             background: #fff;
@@ -314,6 +337,7 @@
             text-align: center;
             box-shadow: 0 10px 25px rgba(0,0,0,0.25);
             border-left: 5px solid #e67e22;
+            z-index: 5;
         }
         
         .btn {
@@ -342,10 +366,14 @@
             color: #888;
             background: rgba(255, 255, 255, 0.9);
             border-top: 1px solid #eee;
+            position: relative;
+            z-index: 5;
         }
     </style>
 </head>
 <body>
+
+    <div class="stable-watermark-bg"></div>
 
     <header>
         <div class="logo-box">
