@@ -349,7 +349,7 @@
             border-top: 1px solid #f9ebd9;
         }
         
-        /* --- Native Lightbox Overlay Style --- */
+        /* Native Lightbox Overlay Style */
         .image-modal-overlay {
             position: fixed;
             top: 0;
@@ -561,6 +561,9 @@
             <img src="https://i.ibb.co/BVc0X6zM/IMG-20260621-WA0068.jpg" alt="LPG Plant Ongoing Construction">
         </div>
         <div class="work-card reveal-item modal-trigger">
+            <img src="https://i.ibb.co/twmwkZht/IMG-20260621-WA0065.jpg" alt="2.5 Metric Tons Assembly Setup">
+        </div>
+        <div class="work-card reveal-item modal-trigger">
             <img src="https://i.ibb.co/rKTx8wvw/IMG-20260621-WA0061.jpg" alt="LPG Skid Plant Underway">
         </div>
         <div class="work-card reveal-item modal-trigger">
@@ -599,7 +602,7 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Intersection Observer scroll animations
+            // Scroll reveal engine
             const scrollItems = document.querySelectorAll(".reveal-item");
             const observerOptions = {
                 root: null,
@@ -621,7 +624,7 @@
                 revealObserver.observe(item);
             });
 
-            // Lightbox Modal Logic
+            // Inline Lightbox Framework
             const modalOverlay = document.getElementById("galleryModal");
             const modalImg = document.getElementById("modalImg");
             const modalClose = document.getElementById("modalClose");
@@ -632,14 +635,14 @@
                     const imgSource = this.querySelector("img").src;
                     modalImg.src = imgSource;
                     modalOverlay.classList.add("active");
-                    document.body.style.overflow = "hidden"; // Lock page scroll while viewing
+                    document.body.style.overflow = "hidden";
                 });
             });
 
             function closeModal() {
                 modalOverlay.classList.remove("active");
-                document.body.style.overflow = ""; // Restore scrolling
-                setTimeout(() => { modalImg.src = ""; }, 300); // Reset image frame source
+                document.body.style.overflow = "";
+                setTimeout(() => { modalImg.src = ""; }, 300);
             }
 
             modalClose.addEventListener("click", closeModal);
