@@ -349,6 +349,57 @@
             border-top: 1px solid #f9ebd9;
         }
         
+        /* --- Native Lightbox Overlay Style --- */
+        .image-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            padding: 20px;
+        }
+        .image-modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .modal-container {
+            position: relative;
+            max-width: 90%;
+            max-height: 85vh;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+        .image-modal-overlay.active .modal-container {
+            transform: scale(1);
+        }
+        .modal-container img {
+            max-width: 100%;
+            max-height: 85vh;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            display: block;
+            margin: 0 auto;
+        }
+        .modal-close-btn {
+            position: absolute;
+            top: -45px;
+            right: 0;
+            color: #fff;
+            font-size: 2rem;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            outline: none;
+        }
+
         /* Clean Black Contact Card */
         .contact-box {
             position: relative;
@@ -506,27 +557,26 @@
 
     <div class="section-title">more also</div>
     <section class="horizontal-section">
-        <div class="work-card reveal-item">
-            <a href="https://i.ibb.co/BVc0X6zM/IMG-20260621-WA0068.jpg" target="_blank">
-                <img src="https://i.ibb.co/BVc0X6zM/IMG-20260621-WA0068.jpg" alt="LPG Plant Ongoing Construction">
-            </a>
+        <div class="work-card reveal-item modal-trigger">
+            <img src="https://i.ibb.co/BVc0X6zM/IMG-20260621-WA0068.jpg" alt="LPG Plant Ongoing Construction">
         </div>
-        <div class="work-card reveal-item">
-            <a href="https://i.ibb.co/rKTx8wvw/IMG-20260621-WA0061.jpg" target="_blank">
-                <img src="https://i.ibb.co/rKTx8wvw/IMG-20260621-WA0061.jpg" alt="LPG Skid Plant Underway">
-            </a>
+        <div class="work-card reveal-item modal-trigger">
+            <img src="https://i.ibb.co/rKTx8wvw/IMG-20260621-WA0061.jpg" alt="LPG Skid Plant Underway">
         </div>
-        <div class="work-card reveal-item">
-            <a href="https://i.ibb.co/8Lc2QW9G/IMG-20260622-WA0044.jpg" target="_blank">
-                <img src="https://i.ibb.co/8Lc2QW9G/IMG-20260622-WA0044.jpg" alt="Gas Station Structural Infrastructure Assembly">
-            </a>
+        <div class="work-card reveal-item modal-trigger">
+            <img src="https://i.ibb.co/8Lc2QW9G/IMG-20260622-WA0044.jpg" alt="Gas Station Structural Infrastructure Assembly">
         </div>
-        <div class="work-card reveal-item">
-            <a href="https://i.ibb.co/chcr9k94/IMG-20260621-WA0059.jpg" target="_blank">
-                <img src="https://i.ibb.co/chcr9k94/IMG-20260621-WA0059.jpg" alt="Completed LPG Plant Facility Delivery">
-            </a>
+        <div class="work-card reveal-item modal-trigger">
+            <img src="https://i.ibb.co/chcr9k94/IMG-20260621-WA0059.jpg" alt="Completed LPG Plant Facility Delivery">
         </div>
     </section>
+
+    <div class="image-modal-overlay" id="galleryModal">
+        <div class="modal-container">
+            <button class="modal-close-btn" id="modalClose">&times;</button>
+            <img src="" id="modalImg" alt="Enlarged gallery view">
+        </div>
+    </div>
 
     <section style="padding: 10px 20px;">
         <div class="contact-box reveal-item">
@@ -549,8 +599,8 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            // Intersection Observer scroll animations
             const scrollItems = document.querySelectorAll(".reveal-item");
-
             const observerOptions = {
                 root: null,
                 rootMargin: "-20px 0px -40px 0px", 
@@ -569,6 +619,34 @@
 
             scrollItems.forEach((item) => {
                 revealObserver.observe(item);
+            });
+
+            // Lightbox Modal Logic
+            const modalOverlay = document.getElementById("galleryModal");
+            const modalImg = document.getElementById("modalImg");
+            const modalClose = document.getElementById("modalClose");
+            const triggers = document.querySelectorAll(".modal-trigger");
+
+            triggers.forEach(trigger => {
+                trigger.addEventListener("click", function() {
+                    const imgSource = this.querySelector("img").src;
+                    modalImg.src = imgSource;
+                    modalOverlay.classList.add("active");
+                    document.body.style.overflow = "hidden"; // Lock page scroll while viewing
+                });
+            });
+
+            function closeModal() {
+                modalOverlay.classList.remove("active");
+                document.body.style.overflow = ""; // Restore scrolling
+                setTimeout(() => { modalImg.src = ""; }, 300); // Reset image frame source
+            }
+
+            modalClose.addEventListener("click", closeModal);
+            modalOverlay.addEventListener("click", function(e) {
+                if (e.target === modalOverlay) {
+                    closeModal();
+                }
             });
         });
     </script>
