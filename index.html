@@ -302,6 +302,29 @@
             position: relative;
             z-index: 5;
         }
+        
+        /* New Horizontal Row Style for more also section */
+        .horizontal-section {
+            max-width: 600px;
+            margin: 10px auto 30px auto;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+            overflow-x: auto;
+            white-space: nowrap;
+            scrollbar-width: none; /* Hide scrollbar for clean look */
+            position: relative;
+            z-index: 5;
+        }
+        .horizontal-section::-webkit-scrollbar {
+            display: none; /* Hide scrollbar Chrome/Safari */
+        }
+        .horizontal-section .work-card {
+            flex: 0 0 260px; /* Fixed card width so they line up side-by-side */
+            margin-bottom: 5px;
+        }
+
         .work-card {
             background: #fff;
             border-radius: 20px; 
@@ -481,7 +504,7 @@
     </section>
 
     <div class="section-title">more also</div>
-    <section class="works-section">
+    <section class="horizontal-section">
         <div class="work-card reveal-item">
             <img src="https://i.ibb.co/BVc0X6zM/IMG-20260621-WA0068.jpg" alt="LPG Plant Ongoing Construction">
         </div>
